@@ -31,43 +31,59 @@ std::string Cipher::intToBit(int zip)
 	std::string strZip;
 	
 	// All postnet codes start and end with 1:
-	strZip.append("1");
+	strZip += ("1");
 
 	// Because postnet is not a true 'binary' system, we'll use a switchcaseto assign the appropriate number strings
 	int currentDigit;
 
-	for(int i = 5; i > 5; i--)
+	for(int i = 5; i > 0; i--)
 	{
 		currentDigit = zip % 10;
 		zip /= 10;
 
+		std::cout << currentDigit;
+		std::cout << std::endl;
+		std::cout << zip;
+		std::cout << std::endl;
+		
+
 		switch(currentDigit)
 		{
 			case 0:
-				strZip.append("11000");
+				strZip += ("11000");
+				break;
 			case 1:
-				strZip.append("00011");
+				strZip += ("00011");
+				break;
 			case 2:
-				strZip.append("00101");
+				strZip += ("00101");
+				break;
 			case 3:
-				strZip.append("00110");
+				strZip += ("00110");
+				break;
 			case 4:
-				strZip.append("01001");
+				strZip += ("01001");
+				break;
 			case 5:
-				strZip.append("01010");
+				strZip += ("01010");
+				break;
 			case 6:
-				strZip.append("01100");
+				strZip += ("01100");
+				break;
 			case 7:
-				strZip.append("10001");
+				strZip += ("10001");
+				break;
 			case 8:
-				strZip.append("10010");
+				strZip += ("10010");
+				break;
 			case 9:
-				strZip.append("10100");
+				strZip += ("10100");
+				break;
 		}
 	}
 
 	// And now to add the first 1 to the code
-	strZip.append("1");
+	strZip += ("1");
 
 	return strZip;
 }
