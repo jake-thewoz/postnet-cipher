@@ -4,13 +4,13 @@
 
 Cipher::Cipher(){}
 
-void Cipher::setIntZip(int &zip)
+void Cipher::setIntZip(int zip)
 {
 	intZip = zip;
 	bitZip = intToBit(zip);
 }
 
-void Cipher::setBitZip(std::string &zip)
+void Cipher::setBitZip(std::string zip)
 {
 	bitZip = zip;
 	intZip = bitToInt(zip);
@@ -26,12 +26,12 @@ std::string Cipher::getBitZip()
 	return bitZip;
 }
 
-std::string Cipher::intToBit(int &zip)
+std::string Cipher::intToBit(int zip)
 {
 	std::string strZip;
 	
 	// All postnet codes start and end with 1:
-	strZip.append('1');
+	strZip.append("1");
 
 	// Because postnet is not a true 'binary' system, we'll use a switchcaseto assign the appropriate number strings
 	int currentDigit;
@@ -67,12 +67,12 @@ std::string Cipher::intToBit(int &zip)
 	}
 
 	// And now to add the first 1 to the code
-	strZip.append('1');
+	strZip.append("1");
 
 	return strZip;
 }
 
-int Cipher::bitToInt(std::string &zip)
+int Cipher::bitToInt(std::string zip)
 {
 	return 1234;
 }
