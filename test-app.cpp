@@ -12,5 +12,11 @@ int main()
 	cout << cipher.getBitZip();
 	cout << endl;
 
+	cout << "Entering postnet back in:\n";
+	cipher.setBitZip(cipher.getBitZip());
+	cout << "Int zip is: ";
+	cout << cipher.getIntZip();
+	cout << endl;
+
 	return 0;
 }

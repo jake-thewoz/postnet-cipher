@@ -95,47 +95,48 @@ int Cipher::bitToInt(std::string zip)
 	zip = zip.substr(1, zip.length() - 2);
 
 	// Then we'll loop through for all the digits
-	int intZip;
+	int intZip(0);
 	std::string numberCode;
 
 	while (!zip.empty())
 	{
+		intZip *= 10;
 		numberCode = zip.substr(0,5);
-		zip = zip.substr(4, zip.length() - 5);
+		zip = zip.substr(5, zip.length() - 5);
 
-		switch(numberCode)
+		switch(std::stoi(numberCode))
 		{
-			case "11000":
+			case 11000:
 				intZip += 0;
 				break;
-			case "00011":
+			case 11:
 				intZip += 1;
 				break;
-			case "00101":
+			case 101:
 				intZip += 2;
 				break;
-			case "00110":
+			case 110:
 				intZip += 3;
 				break;
-			case "01001":
+			case 1001:
 				intZip += 4;
 				break;
-			case "01010":
+			case 1010:
 				intZip += 5;
 				break;
-			case "01100":
+			case 1100:
 				intZip += 6;
 				break;
-			case "10001":
+			case 10001:
 				intZip += 7;
 				break;
-			case "10010":
+			case 10010:
 				intZip += 8;
 				break;
-			case "10100":
+			case 10100:
 				intZip += 9;
 				break;
 		}
 	}
-	return 1234;
+	return intZip;
 }
