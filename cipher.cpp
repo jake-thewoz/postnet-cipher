@@ -140,3 +140,19 @@ int Cipher::bitToInt(std::string zip)
 	}
 	return intZip;
 }
+
+void Cipher::printPostnet()
+{
+	for(char i : bitZip)
+	{
+		if (i == '1') std::cout << "|";
+		else std::cout << " ";
+	}
+	
+	std::cout << std::endl;
+
+	for(int i = 0; i < bitZip.length(); i++)
+		std::cout << "|";
+
+	std::cout << std::endl;
+}

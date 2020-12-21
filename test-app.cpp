@@ -18,5 +18,8 @@ int main()
 	cout << cipher.getIntZip();
 	cout << endl;
 
+	cout << "Testing the print function:\n";
+	cipher.printPostnet();
+
 	return 0;
 }

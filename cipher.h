@@ -10,6 +10,7 @@ public:
 	void setBitZip(std::string zip);
 	int getIntZip();
 	std::string getBitZip();
+	void printPostnet();
 private:
 	int intZip;
 	std::string bitZip;
