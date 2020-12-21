@@ -91,5 +91,51 @@ std::string Cipher::intToBit(int zip)
 
 int Cipher::bitToInt(std::string zip)
 {
+	// Okay. First, we remove the first and last '1'
+	zip = zip.substr(1, zip.length() - 2);
+
+	// Then we'll loop through for all the digits
+	int intZip;
+	std::string numberCode;
+
+	while (!zip.empty())
+	{
+		numberCode = zip.substr(0,5);
+		zip = zip.substr(4, zip.length() - 5);
+
+		switch(numberCode)
+		{
+			case "11000":
+				intZip += 0;
+				break;
+			case "00011":
+				intZip += 1;
+				break;
+			case "00101":
+				intZip += 2;
+				break;
+			case "00110":
+				intZip += 3;
+				break;
+			case "01001":
+				intZip += 4;
+				break;
+			case "01010":
+				intZip += 5;
+				break;
+			case "01100":
+				intZip += 6;
+				break;
+			case "10001":
+				intZip += 7;
+				break;
+			case "10010":
+				intZip += 8;
+				break;
+			case "10100":
+				intZip += 9;
+				break;
+		}
+	}
 	return 1234;
 }
