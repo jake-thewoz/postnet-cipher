@@ -1,11 +1,11 @@
 #pragma once
-#include<bitset>
 #include<string>
 
 class Cipher
 {
 public:
 	Cipher();
+	friend int numberOfDigits(int zip);
 	void setIntZip(int zip);
 	void setBitZip(std::string zip);
 	int getIntZip();

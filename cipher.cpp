@@ -4,6 +4,12 @@
 
 Cipher::Cipher(){}
 
+int numberOfDigits(int zip)
+{
+	std::string strZip = std::to_string(zip);
+	return strZip.length();
+}
+
 void Cipher::setIntZip(int zip)
 {
 	intZip = zip;
@@ -31,59 +37,54 @@ std::string Cipher::intToBit(int zip)
 	std::string strZip;
 	
 	// All postnet codes start and end with 1:
-	strZip += ("1");
+	strZip.insert(0, "1");
 
-	// Because postnet is not a true 'binary' system, we'll use a switchcaseto assign the appropriate number strings
+	// Because postnet is not a true 'binary' system, we'll use a switchcase to assign the appropriate number strings
 	int currentDigit;
+	int totalDigits = numberOfDigits(zip);
 
-	for(int i = 5; i > 0; i--)
+	for(int i = 0; i < totalDigits; i++)
 	{
 		currentDigit = zip % 10;
 		zip /= 10;
 
-		std::cout << currentDigit;
-		std::cout << std::endl;
-		std::cout << zip;
-		std::cout << std::endl;
-		
-
 		switch(currentDigit)
 		{
 			case 0:
-				strZip += ("11000");
+				strZip.insert(0, "11000");
 				break;
 			case 1:
-				strZip += ("00011");
+				strZip.insert(0, "00011");
 				break;
 			case 2:
-				strZip += ("00101");
+				strZip.insert(0, "00101");
 				break;
 			case 3:
-				strZip += ("00110");
+				strZip.insert(0, "00110");
 				break;
 			case 4:
-				strZip += ("01001");
+				strZip.insert(0, "01001");
 				break;
 			case 5:
-				strZip += ("01010");
+				strZip.insert(0, "01010");
 				break;
 			case 6:
-				strZip += ("01100");
+				strZip.insert(0, "01100");
 				break;
 			case 7:
-				strZip += ("10001");
+				strZip.insert(0, "10001");
 				break;
 			case 8:
-				strZip += ("10010");
+				strZip.insert(0, "10010");
 				break;
 			case 9:
-				strZip += ("10100");
+				strZip.insert(0, "10100");
 				break;
 		}
 	}
 
 	// And now to add the first 1 to the code
-	strZip += ("1");
+	strZip.insert(0, "1");
 
 	return strZip;
 }
