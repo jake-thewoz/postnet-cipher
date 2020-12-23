@@ -21,5 +21,21 @@ int main()
 	cout << "Testing the print function:\n";
 	cipher.printPostnet();
 
+
+	cout << "Entering zipcode 10128:\n";
+	cipher.setIntZip(10128);
+	cout << "Bit zip is: ";
+	cout << cipher.getBitZip();
+	cout << endl;
+
+	cout << "Entering postnet back in:\n";
+	cipher.setBitZip(cipher.getBitZip());
+	cout << "Int zip is: ";
+	cout << cipher.getIntZip();
+	cout << endl;
+
+	cout << "Testing the print function:\n";
+	cipher.printPostnet();
+
 	return 0;
 }
